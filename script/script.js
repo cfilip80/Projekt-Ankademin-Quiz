@@ -89,7 +89,7 @@ function submitQuiz() {
             isCorrect = JSON.stringify(userAnswers[index].sort()) === JSON.stringify(q.correctAnswers.sort());
         }
 
-        resultHTML += `<p>${q.question}<br>
+        resultHTML += `<p><b>${q.question}</b><br>
         Ditt svar: <span class="${isCorrect ? 'green' : 'red'}">${userAnswer}</span><br>
         Rätt svar: <span class="green">${correctAnswer}</span></p>`;
 
@@ -138,13 +138,13 @@ function toggleMode() {
     if (document.body.classList.contains("dark-mode")) {
         mainContainer.style.backgroundColor = "#333";
         mainContainer.style.color = "white";
-        quizContainer.style.border = "3px solid red";
+        quizContainer.style.border = "3px dotted red";
         resultContainer.style.backgroundColor = "#333";
         resultContainer.style.color = "white";
     } else {
         mainContainer.style.backgroundColor = "white";
         mainContainer.style.color = "black";
-        quizContainer.style.border = "3px solid blue";
+        quizContainer.style.border = "3px dotted blue";
         resultContainer.style.backgroundColor = "white";
         resultContainer.style.color = "black";
     }

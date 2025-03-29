@@ -123,7 +123,7 @@ div#quiz-container p {
 
 #welcome {
     font-size: 35px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 body.light-mode { 
@@ -155,7 +155,7 @@ body.light-mode #result-container {
 }
 
 #result-container {
-    display: flex;
+    display: none;
     width: 400px;
     height: 600px;
     border: 1px solid black;
@@ -165,4 +165,35 @@ body.light-mode #result-container {
     background-color: white;
     box-shadow: 0 0 5px 1px;
     margin-left: 20px;
+}
+
+.final-result-message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.final-result-message.green {
+    color: green;
+}
+
+.final-result-message.orange {
+    color: orange;
+}
+
+.final-result-message.red {
+    color: red;
+}
+
+.green {
+    color: green !important;
+}
+
+.red {
+    color: red !important;
+}
+
+.orange {
+    color: orange !important;
 }
