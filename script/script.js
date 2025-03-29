@@ -91,14 +91,21 @@ function toggleMode() {
     document.body.classList.toggle("light-mode");
 
     let mainContainer = document.querySelector(".main-container");
+    let resultContainer = document.querySelector("#result-container");
     let quizContainer = document.getElementById("quiz-container");
     if (document.body.classList.contains("dark-mode")) {
         mainContainer.style.backgroundColor = "#333";
         mainContainer.style.color = "white";
         quizContainer.style.border = "3px solid red";
+        resultContainer.style.backgroundColor = "#333";
+        resultContainer.style.color = "white";
     } else {
         mainContainer.style.backgroundColor = "white";
         mainContainer.style.color = "black";
         quizContainer.style.border = "3px solid blue";
+        resultContainer.style.backgroundColor = "white";
+        resultContainer.style.color = "black";
     }
+
+    
 }
