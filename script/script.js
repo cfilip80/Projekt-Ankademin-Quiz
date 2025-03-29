@@ -56,3 +56,35 @@ function loadQuestion() {
     }
     quizContainer.appendChild(div);
 }
+
+function nextQuestion() {
+    const inputs = document.getElementsByName("q");
+    let selectedValues = [...inputs].filter(input => input.checked).map(input => input.value);
+    userAnswers.push(selectedValues);
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+    currentQuestionIndex++;
+    loadQuestion();
+    }
+
+    else if (currentQuestionIndex === quizQuestions.length - 1) {
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "block";
+    }
+    console.log(userAnswers);
+}
+
+function cancelQuiz() {
+
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    // Göm quiz-relaterade element
+    document.getElementById("quiz-container").style.display = "none"; // Göm quizet
+    document.getElementById("next-btn").style.display = "none"; // Göm nästa knapp
+    document.getElementById("submit-btn").style.display = "none"; // Göm skicka in knapp
+    document.getElementById("cancel-btn").style.display = "none"; // Göm avbryt knapp
+
+    // Visa välkomstmeddelandet och start-knappen
+    document.getElementById("welcome").style.display = "block"; // Visa välkomstmeddelandet
+    document.querySelector(".btn").style.display = "block"; // Visa start-knappen
+}

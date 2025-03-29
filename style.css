@@ -82,3 +82,22 @@ div#quiz-container p {
     word-break: break-word;
 
 }
+
+.quiz-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#restart-btn {
+    display: none;
+    font-size: 16px;
+    height: 60px;
+    width: 100px;
+}
+
+#welcome {
+    font-size: 35px;
+    margin-bottom: 100px;
+}

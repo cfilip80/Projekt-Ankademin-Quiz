@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="main-container">
-        <div><button onClick="toggleMode()">Toggle Dark/Light mode</button></div>
+        <!-- <div><button onClick="toggleMode()">Toggle Dark/Light mode</button></div> -->
         <div class="final-result-message" style="display: none;"></div>
         <div class="question-container">
             <div id="quiz-container"></div>
@@ -22,9 +22,9 @@
         </div>
         <div class="button-container">
             <button id="start-btn" class="btn" onclick="startQuiz()">Start</button>
-            <button id="next-btn" class="btn">Nästa</button>
+            <button id="next-btn" class="btn" onclick="nextQuestion()">Nästa</button>
             <button id="submit-btn" class="btn">Skicka in</button>
-            <button id="cancel-btn" class="btn">Avbryt</button>
+            <button id="cancel-btn" class="btn" onclick="cancelQuiz()">Avbryt</button>
             <button id="restart-btn" class="btn">Starta om</button>
         </div>
     </main>
