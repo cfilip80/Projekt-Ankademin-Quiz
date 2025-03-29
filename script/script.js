@@ -1,3 +1,16 @@
+let quizContainer = document.getElementById("quiz-container");
+let startBtn = document.getElementById("start-btn");
+let nextBtn = document.getElementById("next-btn");
+let submitBtn = document.getElementById("submit-btn");
+let cancelBtn = document.getElementById("cancel-btn");
+let restartBtn = document.getElementById("restart-btn");
+let welcomeMsg = document.getElementById("welcome");
+
+document.getElementById("cancel-btn").style.display = "none";
+
+let currentQuestionIndex = 0;
+let userAnswers = [];
+
 const quizQuestions = [
     { type: "truefalse", question: "JavaScript är ett objektorienterat programmeringsspråk.", correctAnswer: "false" },
     { type: "truefalse", question: "JavaScript kan användas för att manipulera HTML-dokument.", correctAnswer: "true" },
@@ -12,3 +25,13 @@ const quizQuestions = [
     { type: "checkbox", question: "Vilka av följande metoder används för att manipulera DOM-element i JavaScript?", options: ["document.getElementById()", "document.createElement()", "document.getElementByTagName()", "document.style()"], correctAnswers: ["document.getElementById()", "document.createElement()", "document.getElementByTagName()"] },
     { type: "checkbox", question: "Vilka av följande är falska JavaScript-metoder?", options: ["isNaN()", "isArray()", "Array.push()", "Date.now()"], correctAnswers: ["isArray()"] }
 ];
+
+function startQuiz() {
+    welcomeMsg.style.display = "none";
+    quizContainer.style.display = "block";
+    nextBtn.style.display = "block";
+    cancelBtn.style.display = "block";
+    submitBtn.style.display = "none";
+    restartBtn.style.display = "none";
+    startBtn.style.display = "none";
+}

@@ -28,3 +28,19 @@ body {
     background-color: white;
     box-shadow: 0 0 5px 1px;
 }
+
+.btn {
+    font-size: 20px;
+    height: 60px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(1, 1, 253);
+    color: white;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(39, 39, 230);
+}
