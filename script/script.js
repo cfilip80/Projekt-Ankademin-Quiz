@@ -100,10 +100,10 @@ function submitQuiz() {
     let resultText = scorePercentage < 50 ? "Underkänt" : scorePercentage <= 75 ? "Bra" : "Riktigt bra jobbat!";
     let resultClass = scorePercentage < 50 ? "red" : scorePercentage <= 75 ? "orange" : "green";
 
-    document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("next-btn").style.display = "none";
-    document.getElementById("submit-btn").style.display = "none";
-    document.getElementById("cancel-btn").style.display = "none";
+    quizContainer.style.display = "none";
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "none";
+    cancelBtn.style.display = "none";
 
     let resultContainer = document.getElementById("result-container");
     resultContainer.style.display = "block";
@@ -126,12 +126,12 @@ function cancelQuiz() {
         resultContainer.style.display = "none";
     }
     document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("next-btn").style.display = "none";
-    document.getElementById("submit-btn").style.display = "none";
-    document.getElementById("cancel-btn").style.display = "none";
-    document.getElementById("welcome").style.display = "block";
-    document.querySelector(".btn").style.display = "block";
-    document.getElementById("restart-btn").style.display = "none";
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "none";
+    cancelBtn.style.display = "none";
+    welcomeMsg.style.display = "block";
+    startBtn.style.display = "block";
+    restartBtn.style.display = "none";
     document.querySelector(".final-result-message").innerHTML = "";
     document.querySelector(".final-result-message").style.display = "none";
 }
