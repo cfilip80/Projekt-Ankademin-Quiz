@@ -74,8 +74,51 @@ function nextQuestion() {
     console.log(userAnswers);
 }
 
-function cancelQuiz() {
+function submitQuiz() {
+    let correctAnswers = 0;
+    let resultHTML = "<h2>Resultat</h2>";
 
+    quizQuestions.forEach((q, index) => {
+        let isCorrect = false;
+        let userAnswer = userAnswers[index].join(", ") || "Inget svar";
+        let correctAnswer = q.type === "checkbox" ? q.correctAnswers.join(", ") : q.correctAnswer;
+
+        if (q.type === "truefalse" || q.type === "multiple") {
+            isCorrect = userAnswers[index][0] === q.correctAnswer;
+        } else if (q.type === "checkbox") {
+            isCorrect = JSON.stringify(userAnswers[index].sort()) === JSON.stringify(q.correctAnswers.sort());
+        }
+
+        resultHTML += `<p>${q.question}<br>
+        Ditt svar: <span class="${isCorrect ? 'green' : 'red'}">${userAnswer}</span><br>
+        Rätt svar: <span class="green">${correctAnswer}</span></p>`;
+
+        if (isCorrect) correctAnswers++;
+    });
+
+    let scorePercentage = (correctAnswers / quizQuestions.length) * 100;
+    let resultText = scorePercentage < 50 ? "Underkänt" : scorePercentage <= 75 ? "Bra" : "Riktigt bra jobbat!";
+    let resultClass = scorePercentage < 50 ? "red" : scorePercentage <= 75 ? "orange" : "green";
+
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("submit-btn").style.display = "none";
+    document.getElementById("cancel-btn").style.display = "none";
+
+    let resultContainer = document.getElementById("result-container");
+    resultContainer.style.display = "block";
+    resultContainer.innerHTML = resultHTML;
+
+    document.getElementById("restart-btn").style.display = "block";
+
+    let finalMessage = `<h1>${resultText}</h1> <br> <h3> Du fick ${correctAnswers} av ${quizQuestions.length} rätt.</h3>`;
+    let finalResultMessage = document.querySelector(".final-result-message");
+    finalResultMessage.innerHTML = finalMessage;
+    finalResultMessage.className = `final-result-message ${resultClass}`;
+    finalResultMessage.style.display = "block";
+}
+
+function cancelQuiz() {
     currentQuestionIndex = 0;
     userAnswers = [];
     document.getElementById("quiz-container").style.display = "none";
@@ -89,7 +132,6 @@ function cancelQuiz() {
 function toggleMode() {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
-
     let mainContainer = document.querySelector(".main-container");
     let resultContainer = document.querySelector("#result-container");
     let quizContainer = document.getElementById("quiz-container");
