@@ -101,3 +101,13 @@ div#quiz-container p {
     font-size: 35px;
     margin-bottom: 100px;
 }
+
+body.light-mode { 
+    background-color: white; 
+    color: black; 
+}  
+
+body.dark-mode { 
+    background-color: black;
+    color: white; 
+}

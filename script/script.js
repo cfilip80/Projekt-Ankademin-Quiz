@@ -85,3 +85,17 @@ function cancelQuiz() {
     document.getElementById("welcome").style.display = "block";
     document.querySelector(".btn").style.display = "block";
 }
+
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+
+    let mainContainer = document.querySelector(".main-container");
+    if (document.body.classList.contains("dark-mode")) {
+        mainContainer.style.backgroundColor = "#333";
+        mainContainer.style.color = "white";
+    } else {
+        mainContainer.style.backgroundColor = "white";
+        mainContainer.style.color = "black";
+    }
+}
