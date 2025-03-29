@@ -78,13 +78,10 @@ function cancelQuiz() {
 
     currentQuestionIndex = 0;
     userAnswers = [];
-    // Göm quiz-relaterade element
-    document.getElementById("quiz-container").style.display = "none"; // Göm quizet
-    document.getElementById("next-btn").style.display = "none"; // Göm nästa knapp
-    document.getElementById("submit-btn").style.display = "none"; // Göm skicka in knapp
-    document.getElementById("cancel-btn").style.display = "none"; // Göm avbryt knapp
-
-    // Visa välkomstmeddelandet och start-knappen
-    document.getElementById("welcome").style.display = "block"; // Visa välkomstmeddelandet
-    document.querySelector(".btn").style.display = "block"; // Visa start-knappen
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("submit-btn").style.display = "none";
+    document.getElementById("cancel-btn").style.display = "none";
+    document.getElementById("welcome").style.display = "block";
+    document.querySelector(".btn").style.display = "block";
 }
