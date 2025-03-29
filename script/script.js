@@ -34,4 +34,25 @@ function startQuiz() {
     submitBtn.style.display = "none";
     restartBtn.style.display = "none";
     startBtn.style.display = "none";
+    loadQuestion();
+}
+
+function loadQuestion() {
+    quizContainer.innerHTML = "";
+    let q = quizQuestions[currentQuestionIndex];
+    let div = document.createElement("div");
+    div.innerHTML = `<p>${q.question}</p>`;
+    if (q.type === "truefalse") {
+        div.innerHTML += `<label><input type="radio" name="q" value="true"> Sant</label>`;
+        div.innerHTML += `<label><input type="radio" name="q" value="false"> Falskt</label>`;
+    } else if (q.type === "multiple") {
+        q.options.forEach(option => {
+            div.innerHTML += `<label><input type="radio" name="q" value="${option}"> ${option}</label>`;
+        });
+    } else if (q.type === "checkbox") {
+        q.options.forEach(option => {
+            div.innerHTML += `<label><input type="checkbox" name="q" value="${option}"> ${option}</label>`;
+        });
+    }
+    quizContainer.appendChild(div);
 }
