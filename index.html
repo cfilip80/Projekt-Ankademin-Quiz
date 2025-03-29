@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examination Projekt - Ankademin Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./script/script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Ankademin Quiz</title>
 </head>
 <body>
     <main class="main-container">
-        <div></div>
+        <div><button onClick="toggleMode()">Toggle Dark/Light mode</button></div>
+        <div class="final-result-message" style="display: none;"></div>
         <div class="question-container">
-            <div id="result-container">
-                <div id="result" class="result"></div>
-            </div>
-        </div>
-        <div class="answer-container" class="">
-            <div id="welcome">
-                
-            </div>
             <div id="quiz-container"></div>
         </div>
+        <div class="answer-container">
+            <div id="welcome">
+                <h2>Välkommen till Ankademin Quiz</h2>
+                <p>Tryck på start för att börja quizet.</p>
+            </div>
+        </div>
         <div class="button-container">
+            <button id="start-btn" class="btn">Start</button>
+            <button id="next-btn" class="btn">Nästa</button>
+            <button id="submit-btn" class="btn">Skicka in</button>
+            <button id="cancel-btn" class="btn">Avbryt</button>
+            <button id="restart-btn" class="btn">Starta om</button>
         </div>
     </main>
+
+    <div id="result-container">
+        <div id="result"></div>
+    </div>
 </body>
 </html>

@@ -2,3 +2,29 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 600px;
+    max-height: 600px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 0 5px 1px;
+}
