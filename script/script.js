@@ -151,3 +151,25 @@ function toggleMode() {
 
     
 }
+
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    userAnswers = [];
+
+    let resultContainer = document.querySelector("#result-container");
+    if (resultContainer) {
+        resultContainer.style.display = "none";
+    }
+
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("submit-btn").style.display = "none";
+    document.getElementById("cancel-btn").style.display = "none";
+    document.getElementById("restart-btn").style.display = "none";
+
+    document.getElementById("welcome").style.display = "block";
+    document.querySelector(".btn").style.display = "block";
+    document.querySelector(".btn").textContent = "Starta";
+    document.querySelector(".final-result-message").innerHTML = "";
+    document.querySelector(".final-result-message").style.display = "none";
+}
