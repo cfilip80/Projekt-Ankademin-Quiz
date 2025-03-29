@@ -91,11 +91,14 @@ function toggleMode() {
     document.body.classList.toggle("light-mode");
 
     let mainContainer = document.querySelector(".main-container");
+    let quizContainer = document.getElementById("quiz-container");
     if (document.body.classList.contains("dark-mode")) {
         mainContainer.style.backgroundColor = "#333";
         mainContainer.style.color = "white";
+        quizContainer.style.border = "3px solid red";
     } else {
         mainContainer.style.backgroundColor = "white";
         mainContainer.style.color = "black";
+        quizContainer.style.border = "3px solid blue";
     }
 }

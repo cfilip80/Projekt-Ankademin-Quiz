@@ -83,6 +83,30 @@ div#quiz-container p {
 
 }
 
+.question-container label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.question-container input[type="radio"],
+.question-container input[type="checkbox"] {
+    margin-right: 10px; 
+    margin-left: 100px;
+}
+
+.question-container label span {
+    word-wrap: break-word;
+}
+
+.question-container p {
+    font-size: 18px;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
 .quiz-wrapper {
     display: flex;
     flex-direction: row;
