@@ -1,10 +1,12 @@
 let quizContainer = document.getElementById("quiz-container");
+let resultContainer = document.getElementById("result-container");
 let startBtn = document.getElementById("start-btn");
 let nextBtn = document.getElementById("next-btn");
 let submitBtn = document.getElementById("submit-btn");
 let cancelBtn = document.getElementById("cancel-btn");
 let restartBtn = document.getElementById("restart-btn");
 let welcomeMsg = document.getElementById("welcome");
+let finalResultMessage = document.querySelector(".final-result-message");
 
 document.getElementById("cancel-btn").style.display = "none";
 
@@ -105,14 +107,12 @@ function submitQuiz() {
     submitBtn.style.display = "none";
     cancelBtn.style.display = "none";
 
-    let resultContainer = document.getElementById("result-container");
     resultContainer.style.display = "block";
     resultContainer.innerHTML = resultHTML;
 
-    document.getElementById("restart-btn").style.display = "block";
+    restartBtn.style.display = "block";
 
     let finalMessage = `<h1>${resultText}</h1> <br> <h3> Du fick ${correctAnswers} av ${quizQuestions.length} rätt.</h3>`;
-    let finalResultMessage = document.querySelector(".final-result-message");
     finalResultMessage.innerHTML = finalMessage;
     finalResultMessage.className = `final-result-message ${resultClass}`;
     finalResultMessage.style.display = "block";
@@ -121,27 +121,24 @@ function submitQuiz() {
 function cancelQuiz() {
     currentQuestionIndex = 0;
     userAnswers = [];
-    let resultContainer = document.querySelector("#result-container");
     if (resultContainer) {
         resultContainer.style.display = "none";
     }
-    document.getElementById("quiz-container").style.display = "none";
+    quizContainer.style.display = "none";
     nextBtn.style.display = "none";
     submitBtn.style.display = "none";
     cancelBtn.style.display = "none";
     welcomeMsg.style.display = "block";
     startBtn.style.display = "block";
     restartBtn.style.display = "none";
-    document.querySelector(".final-result-message").innerHTML = "";
-    document.querySelector(".final-result-message").style.display = "none";
+    finalResultMessage.innerHTML = "";
+    finalResultMessage.style.display = "none";
 }
 
 function toggleMode() {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
     let mainContainer = document.querySelector(".main-container");
-    let resultContainer = document.querySelector("#result-container");
-    let quizContainer = document.getElementById("quiz-container");
     if (document.body.classList.contains("dark-mode")) {
         mainContainer.style.backgroundColor = "#333";
         mainContainer.style.color = "white";
