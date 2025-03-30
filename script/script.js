@@ -75,7 +75,7 @@ function nextQuestion() {
     loadQuestion();
     }
 
-    else if (currentQuestionIndex === quizQuestions.length - 1) {
+    else if (currentQuestionIndex === quizQuestions.length -1) {
     nextBtn.style.display = "none";
     submitBtn.style.display = "block";
     }
