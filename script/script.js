@@ -6,7 +6,7 @@ let submitBtn = document.getElementById("submit-btn");
 let cancelBtn = document.getElementById("cancel-btn");
 let restartBtn = document.getElementById("restart-btn");
 let welcomeMsg = document.getElementById("welcome");
-let resultMessage = document.querySelector(".final-result-message");
+let resultMessage = document.querySelector(".result-message");
 
 document.getElementById("cancel-btn").style.display = "none";
 
@@ -60,8 +60,14 @@ function loadQuestion() {
 }
 
 function nextQuestion() {
-    const inputs = document.getElementsByName("q");
-    let selectedValues = [...inputs].filter(input => input.checked).map(input => input.value);
+    // const inputs = document.getElementsByName("q");
+    // let selectedValues = [...inputs].filter(input => input.checked).map(input => input.value);
+    // userAnswers.push(selectedValues);
+    const selectedValues = [];
+    document.getElementsByName("q").forEach(input => {
+    if (input.checked)
+        selectedValues.push(input.value);
+    });
     userAnswers.push(selectedValues);
 
     if (currentQuestionIndex < quizQuestions.length - 1) {
