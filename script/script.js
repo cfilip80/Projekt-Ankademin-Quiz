@@ -60,9 +60,6 @@ function loadQuestion() {
 }
 
 function nextQuestion() {
-    // const inputs = document.getElementsByName("q");
-    // let selectedValues = [...inputs].filter(input => input.checked).map(input => input.value);
-    // userAnswers.push(selectedValues);
     const selectedValues = [];
     document.getElementsByName("q").forEach(input => {
     if (input.checked)
